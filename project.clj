@@ -1,4 +1,4 @@
-(defproject htmhell "0.1.0-SNAPSHOT"
+(defproject htmhell "0.1.0"
   :description "A really garbage HTML library."
   :url "https://github.com/jimbru/htmhell"
   :license {:name "Eclipse Public License"
