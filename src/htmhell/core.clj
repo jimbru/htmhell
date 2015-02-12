@@ -1,6 +1,11 @@
 (ns htmhell.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn escape
+  "Escape an HTML string."
+  [html]
+  (.. html
+      (replace "&" "&amp;")
+      (replace "<" "&lt;")
+      (replace ">" "&gt;")
+      (replace "\"" "&quot;")
+      (replace "'" "&apos;")))

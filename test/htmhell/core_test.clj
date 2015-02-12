@@ -2,6 +2,6 @@
   (:require [clojure.test :refer :all]
             [htmhell.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest escape-test
+  (is (= (escape "\"><script>alert();</script>&quot;")
+         "&quot;&gt;&lt;script&gt;alert();&lt;/script&gt;&amp;quot;")))
