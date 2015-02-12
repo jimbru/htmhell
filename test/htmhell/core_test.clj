@@ -15,9 +15,10 @@
     (let [s "{{foo}} now {{bar}}"]
       (is (= (render-string s {:foo "serenity"})
              "serenity now "))))
-  (testing "malformed name"
-    (let [s "Doctor {{van-nostrand}}"]
-      (is (= (render-string s {:van-nostrand "xxx"}) s))))
+  (testing "special chars in name"
+    (let [s "The {{Store_Name}} called, {{they're}} running out of {{some-person}}!"]
+      (is (= (render-string s {:Store_Name "Jerk Store" :some-person "you"})
+             "The Jerk Store called, {{they're}} running out of you!"))))
   (testing "HTML escaping"
     (let [s "get rid of the {{things}}"]
       (is (= (render-string s {:things "<b>exclamation points!</b>"})

@@ -19,7 +19,7 @@
   each dynamic element name."
   [s data]
   (string/replace s
-                  #"\{\{\s*(\p{Alnum}*)\s*\}\}"
+                  #"\{\{\s*([\w\-]*)\s*\}\}"
                   #(escape (get data (keyword (% 1)) ""))))
 
 (defn read-template
