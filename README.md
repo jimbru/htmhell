@@ -7,6 +7,8 @@ Contains all sorts of functionality:
 - HTML escaping that probably isn't insecure
 - America's #1 worst templating system
 
+![Clojars Project](http://clojars.org/htmhell/latest-version.svg)
+
 ## Usage
 
 1. Add this as a dependency in your `project.clj`:
