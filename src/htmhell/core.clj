@@ -5,7 +5,7 @@
 (defn escape
   "Escape an HTML string."
   [html]
-  (.. html
+  (.. (str html)
       (replace "&" "&amp;")
       (replace "<" "&lt;")
       (replace ">" "&gt;")

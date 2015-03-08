@@ -10,7 +10,9 @@
   (testing "basic functionality"
     (let [s "these{{foo}}are making me {{ bar }}"]
       (is (= (render-string s {:foo " pretzels " :bar "thirsty"})
-             "these pretzels are making me thirsty"))))
+             "these pretzels are making me thirsty"))
+      (is (= (render-string s {:foo " pretzels " :bar 88})
+             "these pretzels are making me 88"))))
   (testing "missing data"
     (let [s "{{foo}} now {{bar}}"]
       (is (= (render-string s {:foo "serenity"})
